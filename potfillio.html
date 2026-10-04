@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohit Mishra | Machine Learning Engineer & Applied AI</title>
+  <meta name="description" content="Portfolio of Mohit Mishra - Applied AI Engineering professional, ML Engineer specializing in Deep Learning, PyTorch, RAG, FAISS, and End-to-End ML Pipelines." />
+  <meta name="author" content="Mohit Mishra" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Neural Canvas Background -->
+  <canvas id="neural-bg" class="neural-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">Mohit Mishra</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="nav-menu">
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a>
+        <a href="#skills" class="nav-link"><i class="fa-solid fa-microchip"></i> Skills</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+        <a href="#interactive-labs" class="nav-link"><i class="fa-solid fa-flask-vial"></i> Live Labs</a>
+        <a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="fa-solid fa-moon theme-icon"></i>
+        </button>
+        <a href="#contact" class="btn btn-sm btn-primary">Hire Me</a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for ML & AI Engineering Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Mohit Mishra</span>
+          </h1>
+
+          <div class="hero-role-wrapper">
+            <span class="role-prefix">Specialized in: </span>
+            <span class="typewriter" id="typewriter"></span>
+          </div>
+
+          <p class="hero-description">
+            Applied AI Engineering professional experienced in building and evaluating machine learning models, fine-tuning neural networks, and developing policy-grounded RAG systems. Passionate about turning complex data into reliable, production-ready AI solutions.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-diagram-project"></i> Explore Projects
+            </a>
+            <a href="#interactive-labs" class="btn btn-outline">
+              <i class="fa-solid fa-terminal"></i> Try Live ML Demos
+            </a>
+            <a href="Mohit_Mishra.pdf" download="Mohit_Mishra.pdf" id="download-resume-btn" class="btn btn-ghost" title=" / Download Resume">
+              <i class="fa-solid fa-file-arrow-down"></i> Resume PDF
+             </a>
+          </div>
+
+          <!-- Quick Contact Bar -->
+          <div class="quick-contact-bar">
+            <div class="contact-pill" title="Location">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Gopiganj, Uttar Pradesh, India</span>
+            </div>
+            <a href="https://www.linkedin.com/in/mohit-mishra-b31458379/" target="_blank" rel="noopener noreferrer" class="contact-pill clickable" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>Mohit Mishra</span>
+            </a>
+            <a href="https://www.instagram.com/secrificer_mohit/?hl=en" target="_blank" rel="noopener noreferrer" class="contact-pill clickable" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Mohit mishra</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="terminal-card glass-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-title">mohit_ai_engine.py</div>
+              <div class="terminal-chip">Python 3.11</div>
+            </div>
+            <div class="terminal-body">
+              <div class="code-line"><span class="kwd">import</span> <span class="mod">torch</span>, <span class="mod">transformers</span>, <span class="mod">faiss</span></div>
+              <div class="code-line"><span class="kwd">from</span> <span class="mod">sklearn.ensemble</span> <span class="kwd">import</span> <span class="cls">RandomForestClassifier</span></div>
+              <div class="code-line empty"></div>
+              <div class="code-line"><span class="comment"># Initialize Applied AI Profile</span></div>
+              <div class="code-line"><span class="var">engineer</span> = {</div>
+              <div class="code-line indent-1"><span class="prop">"name"</span>: <span class="str">"Mohit Mishra"</span>,</div>
+              <div class="code-line indent-1"><span class="prop">"primary_role"</span>: <span class="str">"ML Engineer"</span>,</div>
+              <div class="code-line indent-1"><span class="prop">"specialization"</span>: [<span class="str">"RAG Architecture"</span>, <span class="str">"Computer Vision"</span>, <span class="str">"NLP"</span>],</div>
+              <div class="code-line indent-1"><span class="prop">"education"</span>: <span class="str">"IIT Patna (AI/ML) + BCA"</span>,</div>
+              <div class="code-line indent-1"><span class="prop">"status"</span>: <span class="str">"Ready to Ship Reliable AI Features"</span></div>
+              <div class="code-line">}</div>
+              <div class="code-line empty"></div>
+              <div class="code-line"><span class="kwd">def</span> <span class="fn">build_model</span>(data, architecture=<span class="str">"ResNet-18 + FAISS"</span>):</div>
+              <div class="code-line indent-1"><span class="var">pipeline</span> = <span class="fn">optimize_hyperparameters</span>(data)</div>
+              <div class="code-line indent-1"><span class="kwd">return</span> <span class="var">pipeline</span>.<span class="fn">evaluate</span>(metrics=[<span class="str">"Precision"</span>, <span class="str">"Recall"</span>, <span class="str">"F1"</span>])</div>
+              <div class="code-line empty"></div>
+              <div class="code-output-block">
+                <div class="output-header"><i class="fa-solid fa-circle-check text-success"></i> Model Validation Output:</div>
+                <div class="output-line">&gt; Loading 6,000 order vectors... <span class="text-accent">[OK]</span></div>
+                <div class="output-line">&gt; Fine-tuning ResNet-18 in PyTorch... <span class="text-accent">[Done]</span></div>
+                <div class="output-line">&gt; FAISS Index search latency: <span class="text-success">&lt; 12ms</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS & HIGHLIGHTS BANNER -->
+    <section class="metrics-banner">
+      <div class="container metrics-grid">
+        <div class="metric-card glass-card">
+          <div class="metric-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="metric-info">
+            <h3 class="metric-number">IIT Patna</h3>
+            <p class="metric-label">AI & ML Certification</p>
+          </div>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="metric-icon"><i class="fa-solid fa-database"></i></div>
+          <div class="metric-info">
+            <h3 class="metric-number">6,000+</h3>
+            <p class="metric-label">Orders Dataset Modeled</p>
+          </div>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="metric-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="metric-info">
+            <h3 class="metric-number">ResNet-18</h3>
+            <p class="metric-label">PyTorch Deep Vision Fine-Tuned</p>
+          </div>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="metric-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="metric-info">
+            <h3 class="metric-number">0-Hallucination</h3>
+            <p class="metric-label">Policy RAG with FAISS Vectors</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Background & Philosophy</span>
+          <h2 class="section-title">Professional Summary</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card-main glass-card">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="about-quote">
+              "Applied AI Engineering professional experienced in building and evaluating machine learning models and integrating model outputs into simple applications. Skilled in data preparation, model experimentation, and python-based ML workflows. Known for structured problem-solving and collaborating with teams to ship reliable AI features."
+            </p>
+            <div class="about-details-grid">
+              <div class="detail-item">
+                <i class="fa-solid fa-sliders"></i>
+                <div>
+                  <h4>Model Experimentation</h4>
+                  <p>Systematic hyperparameter tuning, cross-validation, and metrics tracking for maximum generalization.</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-filter"></i>
+                <div>
+                  <h4>Data Preparation & EDA</h4>
+                  <p>Comprehensive data cleaning, outlier mitigation, and feature engineering for robust model inputs.</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-rocket"></i>
+                <div>
+                  <h4>End-to-End Delivery</h4>
+                  <p>Translating theoretical ML algorithms into responsive, low-latency APIs and real-world tools.</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <div>
+                  <h4>Engineering Collaboration</h4>
+                  <p>Clear documentation, Git workflow, and structured problem-solving across cross-functional teams.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-sidebar glass-card">
+            <h3 class="sidebar-title"><i class="fa-solid fa-id-card-clip"></i> Profile Fast Facts</h3>
+            <ul class="facts-list">
+              <li>
+                <span class="fact-label">Full Name:</span>
+                <span class="fact-value">Mohit Mishra</span>
+              </li>
+              <li>
+                <span class="fact-label">Primary Role:</span>
+                <span class="fact-value badge-pill">ML Engineer</span>
+              </li>
+              <li>
+                <span class="fact-label">Location:</span>
+                <span class="fact-value">Gopiganj, Uttar Pradesh</span>
+              </li>
+              <li>
+                <span class="fact-label">Primary Framework:</span>
+                <span class="fact-value">PyTorch & Scikit-Learn</span>
+              </li>
+              <li>
+                <span class="fact-label">Vector Search:</span>
+                <span class="fact-value">FAISS + Embeddings</span>
+              </li>
+              <li>
+                <span class="fact-label">Language:</span>
+                <span class="fact-value">Python (Core Specialist)</span>
+              </li>
+            </ul>
+
+            <div class="resume-download-box">
+              <button class="btn btn-primary btn-block" onclick="window.location.href='Mohit_Mishra.pdf'">
+                <i class="fa-solid fa-print"></i> Print Clean Resume View
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Core Competencies</span>
+          <h2 class="section-title">Technical Skills & Expertise</h2>
+          <p class="section-subtitle">Structured according to applied machine learning domains, tools, and workflows</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-filter-nav">
+          <button class="filter-btn active" data-filter="all">All Skills</button>
+          <button class="filter-btn" data-filter="ml">ML Modeling</button>
+          <button class="filter-btn" data-filter="data">Data & Analysis</button>
+          <button class="filter-btn" data-filter="frameworks">Frameworks & Libraries</button>
+          <button class="filter-btn" data-filter="platforms">Platforms & Tools</button>
+          <button class="filter-btn" data-filter="soft">Soft Skills</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: ML Modeling & Evaluation -->
+          <div class="skill-category-card glass-card" data-category="ml">
+            <div class="skill-card-header">
+              <div class="skill-icon-box"><i class="fa-solid fa-diagram-next"></i></div>
+              <div>
+                <h3>ML Modeling & Evaluation</h3>
+                <span class="skill-card-sub">Algorithmic training & verification</span>
+              </div>
+            </div>
+            <div class="skill-tags-group">
+              <span class="skill-tag">Regression</span>
+              <span class="skill-tag">Classification</span>
+              <span class="skill-tag">Hyperparameter Tuning</span>
+              <span class="skill-tag">Cross-Validation</span>
+              <span class="skill-tag">Model Evaluation</span>
+              <span class="skill-tag">Neural Networks</span>
+            </div>
+            <div class="metric-pill-row">
+              <span class="metric-pill"><i class="fa-solid fa-bullseye"></i> Precision</span>
+              <span class="metric-pill"><i class="fa-solid fa-magnet"></i> Recall</span>
+              <span class="metric-pill"><i class="fa-solid fa-scale-balanced"></i> F1-Score</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: Data Preparation & Analysis -->
+          <div class="skill-category-card glass-card" data-category="data">
+            <div class="skill-card-header">
+              <div class="skill-icon-box"><i class="fa-solid fa-broom"></i></div>
+              <div>
+                <h3>Data Preparation & Analysis</h3>
+                <span class="skill-card-sub">Data wrangling & feature mastery</span>
+              </div>
+            </div>
+            <div class="skill-tags-group">
+              <span class="skill-tag">Data Cleaning</span>
+              <span class="skill-tag">Feature Engineering</span>
+              <span class="skill-tag">Exploratory Data Analysis (EDA)</span>
+              <span class="skill-tag">Handling Missing Values</span>
+              <span class="skill-tag">Outlier Detection</span>
+              <span class="skill-tag">Data Imputation</span>
+            </div>
+            <div class="metric-pill-row">
+              <span class="metric-pill"><i class="fa-solid fa-chart-line"></i> Distribution Analysis</span>
+              <span class="metric-pill"><i class="fa-solid fa-filter-circle-dollar"></i> Feature Selection</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Frameworks & Libraries -->
+          <div class="skill-category-card glass-card" data-category="frameworks">
+            <div class="skill-card-header">
+              <div class="skill-icon-box"><i class="fa-solid fa-cubes-stacked"></i></div>
+              <div>
+                <h3>Frameworks & Libraries</h3>
+                <span class="skill-card-sub">Core ML ecosystem & tools</span>
+              </div>
+            </div>
+            <div class="skill-tags-group">
+              <span class="skill-tag highlight">PyTorch</span>
+              <span class="skill-tag highlight">TensorFlow</span>
+              <span class="skill-tag highlight">scikit-learn</span>
+              <span class="skill-tag highlight">Hugging Face</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">FAISS</span>
+              <span class="skill-tag">Sentence Transformers</span>
+              <span class="skill-tag">REST APIs</span>
+            </div>
+            <div class="metric-pill-row">
+              <span class="metric-pill"><i class="fa-solid fa-layer-group"></i> Deep Learning</span>
+              <span class="metric-pill"><i class="fa-solid fa-bolt"></i> Vector Indexing</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: Platforms & Environments -->
+          <div class="skill-category-card glass-card" data-category="platforms">
+            <div class="skill-card-header">
+              <div class="skill-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h3>Platforms & Development</h3>
+                <span class="skill-card-sub">Development environments</span>
+              </div>
+            </div>
+            <div class="skill-tags-group">
+              <span class="skill-tag highlight">Python </span>
+              <span class="skill-tag">Jupyter Notebook</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Google Colab (GPU/TPU)</span>
+              <span class="skill-tag">Terminal & Shell</span>
+              <span class="skill-tag">Git / GitHub</span>
+            </div>
+            <div class="metric-pill-row">
+              <span class="metric-pill"><i class="fa-brands fa-python"></i> Modern Python 3</span>
+              <span class="metric-pill"><i class="fa-solid fa-microchip"></i> CUDA Acceleration</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 5: Soft Skills & Engineering Practice -->
+          <div class="skill-category-card glass-card" data-category="soft">
+            <div class="skill-card-header">
+              <div class="skill-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+              <div>
+                <h3>Engineering Mindset & Soft Skills</h3>
+                <span class="skill-card-sub">Interpersonal and analytical strengths</span>
+              </div>
+            </div>
+            <div class="skill-tags-group">
+              <span class="skill-tag highlight">Problem-solving</span>
+              <span class="skill-tag highlight">Collaboration</span>
+              <span class="skill-tag highlight">Critical Thinking</span>
+              <span class="skill-tag">Structured Communication</span>
+              <span class="skill-tag">Requirement Analysis</span>
+              <span class="skill-tag">Fast Prototyping</span>
+            </div>
+            <div class="metric-pill-row">
+              <span class="metric-pill"><i class="fa-solid fa-people-group"></i> Team Player</span>
+              <span class="metric-pill"><i class="fa-solid fa-code-commit"></i> Agile Mindset</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Applied ML in Production</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Real-world systems combining Computer Vision, Tabular Risk Modeling, and Policy-Grounded RAG</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="projects-container">
+          <!-- PROJECT 1 -->
+          <div class="project-card glass-card">
+            <div class="project-header">
+              <div class="project-title-area">
+                <span class="project-timeline-badge"><i class="fa-regular fa-calendar"></i> 08/2026 – 08/2026</span>
+                <h3 class="project-title">Flipkart Order Intelligence &amp; Support Agent</h3>
+                <span class="project-badge-tag"><i class="fa-solid fa-cart-shopping"></i> E-Commerce AI System</span>
+              </div>
+              <div class="project-actions">
+                <a href="#demo-flipkart" class="btn btn-sm btn-outline"><i class="fa-solid fa-play"></i> Test Demo</a>
+              </div>
+            </div>
+
+            <p class="project-overview">
+              A comprehensive three-tier AI intelligence architecture designed to tackle high return rates, verify customer return product images, and resolve customer support inquiries with zero hallucination.
+            </p>
+
+            <div class="project-pillars-grid">
+              <!-- Pillar 1 -->
+              <div class="pillar-box">
+                <div class="pillar-header">
+                  <span class="pillar-icon"><i class="fa-solid fa-chart-pie"></i></span>
+                  <h4>1. Return Risk Modeling</h4>
+                </div>
+                <p>Built and tuned a <strong>Random Forest model</strong> on a <strong>6,000-order dataset</strong> to predict return probability from category, customer history, discounts, and payment method.</p>
+                <div class="pillar-stat">
+                  <span class="tag-pill">6,000 Dataset</span>
+                  <span class="tag-pill">High Recall Focus</span>
+                </div>
+              </div>
+
+              <!-- Pillar 2 -->
+              <div class="pillar-box">
+                <div class="pillar-header">
+                  <span class="pillar-icon"><i class="fa-solid fa-camera"></i></span>
+                  <h4>2. PyTorch ResNet-18 Vision</h4>
+                </div>
+                <p>Fine-tuned a pre-trained <strong>ResNet-18 in PyTorch</strong> for automated product condition and category verification to prevent fraudulent return claims before processing.</p>
+                <div class="pillar-stat">
+                  <span class="tag-pill">Transfer Learning</span>
+                  <span class="tag-pill">PyTorch Deep Vision</span>
+                </div>
+              </div>
+
+              <!-- Pillar 3 -->
+              <div class="pillar-box">
+                <div class="pillar-header">
+                  <span class="pillar-icon"><i class="fa-solid fa-comments"></i></span>
+                  <h4>3. Policy-Grounded RAG Agent</h4>
+                </div>
+                <p>Engineered a Retrieval-Augmented Generation agent powered by <strong>FAISS vector search</strong> and <strong>sentence-transformers</strong> that answers customer queries strictly grounded on store return policies, reducing hallucinations.</p>
+                <div class="pillar-stat">
+                  <span class="tag-pill">FAISS Index</span>
+                  <span class="tag-pill">Zero Hallucination</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <div class="tech-stack-pills">
+                <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="tech-pill">PyTorch</span>
+                <span class="tech-pill">ResNet-18</span>
+                <span class="tech-pill">Random Forest</span>
+                <span class="tech-pill">FAISS</span>
+                <span class="tech-pill">Sentence-Transformers</span>
+                <span class="tech-pill">scikit-learn</span>
+                <span class="tech-pill">Data Prep</span>
+              </div>
+              <button class="btn btn-sm btn-ghost view-arch-btn" data-project="flipkart">
+                <i class="fa-solid fa-diagram-project"></i> Architecture Diagram
+              </button>
+            </div>
+          </div>
+
+          <!-- PROJECT 2 -->
+          <div class="project-card glass-card">
+            <div class="project-header">
+              <div class="project-title-area">
+                <span class="project-timeline-badge"><i class="fa-regular fa-calendar"></i> 03/2026 – 08/2026</span>
+                <h3 class="project-title">Live Analyzer — Machine Learning Pipeline</h3>
+                <span class="project-badge-tag"><i class="fa-solid fa-bolt"></i> Real-time NLP Pipeline</span>
+              </div>
+              <div class="project-actions">
+                <a href="#demo-live-analyzer" class="btn btn-sm btn-outline"><i class="fa-solid fa-play"></i> Run Analyzer</a>
+              </div>
+            </div>
+
+            <p class="project-overview">
+              An end-to-end Machine Learning pipeline for real-time text sentiment classification using TF-IDF vectorization and a multi-model classifier benchmark — powered by Scikit-Learn and Python.
+            </p>
+
+            <div class="pipeline-flow-diagram">
+              <div class="flow-step">
+                <div class="step-icon"><i class="fa-solid fa-font"></i></div>
+                <div class="step-name">Raw Text Ingestion</div>
+                <div class="step-desc">Tokenization &amp; cleaning</div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              <div class="flow-step">
+                <div class="step-icon"><i class="fa-solid fa-matrix"></i> <i class="fa-solid fa-calculator"></i></div>
+                <div class="step-name">TF-IDF Vectorizer</div>
+                <div class="step-desc">N-gram term weighting</div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              <div class="flow-step highlight">
+                <div class="step-icon"><i class="fa-solid fa-ranking-star"></i></div>
+                <div class="step-name">Multi-Model Benchmark</div>
+                <div class="step-desc">SVM, Naive Bayes, LR, RF</div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              <div class="flow-step">
+                <div class="step-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                <div class="step-name">Real-Time Prediction</div>
+                <div class="step-desc">Sentiment &amp; confidence score</div>
+              </div>
+            </div>
+
+            <div class="project-key-highlights">
+              <div class="highlight-bullet">
+                <i class="fa-solid fa-check-circle text-accent"></i>
+                <span><strong>Comparative Benchmarking:</strong> Evaluated accuracy, precision, recall, and inference latency across multiple scikit-learn classifiers.</span>
+              </div>
+              <div class="highlight-bullet">
+                <i class="fa-solid fa-check-circle text-accent"></i>
+                <span><strong>Optimized Preprocessing:</strong> Handled n-grams, stop words removal, sublinear TF scaling, and sparse matrix representations for low-latency processing.</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <div class="tech-stack-pills">
+                <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="tech-pill">scikit-learn</span>
+                <span class="tech-pill">TF-IDF</span>
+                <span class="tech-pill">NLP</span>
+                <span class="tech-pill">Model Benchmarking</span>
+                <span class="tech-pill">Pandas</span>
+                <span class="tech-pill">NumPy</span>
+              </div>
+              <button class="btn btn-sm btn-ghost view-arch-btn" data-project="live-analyzer">
+                <i class="fa-solid fa-diagram-project"></i> Pipeline Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE LABS / LIVE ML DEMOS -->
+    <section id="interactive-labs" class="section labs-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Interactive Demos</span>
+          <h2 class="section-title">Live ML Engineering Labs</h2>
+          <p class="section-subtitle">Interact with simulated versions of Mohit's portfolio models directly in your browser</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="labs-grid">
+          <!-- DEMO 1: Live Sentiment Analyzer -->
+          <div class="lab-card glass-card" id="demo-live-analyzer">
+            <div class="lab-card-header">
+              <div class="lab-icon"><i class="fa-solid fa-brain"></i></div>
+              <div>
+                <h3>Live Analyzer: Real-Time Sentiment ML</h3>
+                <span class="lab-meta">TF-IDF Vectorizer + Multi-Model Classifier Simulation</span>
+              </div>
+            </div>
+
+            <div class="lab-body">
+              <label for="sentiment-input" class="lab-label">Enter text to evaluate sentiment &amp; model confidence:</label>
+              <textarea id="sentiment-input" class="lab-textarea" rows="3" placeholder="e.g., The quality of this product is phenomenal, exceeded all expectations!">The quality of this product is phenomenal, highly recommended and worth every penny!</textarea>
+
+              <div class="preset-samples">
+                <span class="preset-title">Sample Prompts:</span>
+                <button class="sample-btn" data-text="The package arrived damaged and customer support was completely unhelpful. Very disappointing.">Negative Review</button>
+                <button class="sample-btn" data-text="The product works as described, standard delivery time, average performance.">Neutral Review</button>
+                <button class="sample-btn" data-text="Outstanding performance, fast shipping, and exceptional build quality!">Positive Review</button>
+              </div>
+
+              <div class="lab-controls">
+                <div class="control-select-wrap">
+                  <label for="model-selector">Active Classifier:</label>
+                  <select id="model-selector" class="lab-select">
+                    <option value="logistic">Logistic Regression (Balanced)</option>
+                    <option value="naive_bayes">Multinomial Naive Bayes (Fast)</option>
+                    <option value="random_forest">Random Forest Classifier (Ensemble)</option>
+                    <option value="svm">Linear Support Vector Classifier (SVM)</option>
+                  </select>
+                </div>
+                <button id="run-sentiment-btn" class="btn btn-primary">
+                  <i class="fa-solid fa-bolt"></i> Classify Text
+                </button>
+              </div>
+
+              <!-- Live Analysis Output Container -->
+              <div class="lab-output-card" id="sentiment-output-box">
+                <div class="output-row">
+                  <span class="output-label">Predicted Sentiment:</span>
+                  <span class="output-result badge-success" id="sentiment-label">Positive (96.4% confidence)</span>
+                </div>
+
+                <div class="confidence-bar-wrap">
+                  <div class="confidence-bar-label">
+                    <span>Probability Distribution:</span>
+                    <span id="prob-pct">96.4%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill positive-fill" id="prob-fill" style="width: 96.4%;"></div>
+                  </div>
+                </div>
+
+                <div class="token-tags-row">
+                  <span class="token-title">Top TF-IDF Terms:</span>
+                  <div id="top-tokens" class="tokens-container">
+                    <span class="token-badge">phenomenal (tfidf: 0.62)</span>
+                    <span class="token-badge">worth (tfidf: 0.44)</span>
+                    <span class="token-badge">quality (tfidf: 0.38)</span>
+                    <span class="token-badge">recommended (tfidf: 0.35)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEMO 2: Flipkart Order Intelligence Return Risk & RAG Support -->
+          <div class="lab-card glass-card" id="demo-flipkart">
+            <div class="lab-card-header">
+              <div class="lab-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i></div>
+              <div>
+                <h3>Flipkart Order Intelligence: Return Risk &amp; RAG</h3>
+                <span class="lab-meta">6,000-Order Random Forest + FAISS Vector Support Agent</span>
+              </div>
+            </div>
+
+            <!-- Tab Switcher for Flipkart Project -->
+            <div class="demo-subtabs">
+              <button class="subtab-btn active" data-subtab="return-risk"><i class="fa-solid fa-calculator"></i> Order Return Risk Predictor</button>
+              <button class="subtab-btn" data-subtab="policy-rag"><i class="fa-solid fa-robot"></i> Policy RAG Agent (FAISS)</button>
+            </div>
+
+            <!-- Subtab 1: Return Risk Predictor -->
+            <div class="subtab-content active" id="subtab-return-risk">
+              <div class="form-grid-3">
+                <div class="input-group">
+                  <label for="order-category">Product Category:</label>
+                  <select id="order-category" class="lab-select">
+                    <option value="fashion">Apparel &amp; Fashion (High baseline return)</option>
+                    <option value="electronics">Consumer Electronics</option>
+                    <option value="books">Books &amp; Media</option>
+                    <option value="home">Home &amp; Kitchen</option>
+                  </select>
+                </div>
+
+                <div class="input-group">
+                  <label for="order-discount">Discount Level (%):</label>
+                  <input type="number" id="order-discount" class="lab-input" min="0" max="90" value="45" />
+                </div>
+
+                <div class="input-group">
+                  <label for="payment-method">Payment Method:</label>
+                  <select id="payment-method" class="lab-select">
+                    <option value="cod">Cash on Delivery (COD)</option>
+                    <option value="prepaid">Prepaid / UPI / Card</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="input-group">
+                  <label for="customer-history">Customer Return History:</label>
+                  <select id="customer-history" class="lab-select">
+                    <option value="new">New Customer (0 past returns)</option>
+                    <option value="low">Loyal Buyer (&lt; 5% return rate)</option>
+                    <option value="moderate">Moderate Returns (15-25% rate)</option>
+                    <option value="frequent">Frequent Returner (&gt; 40% rate)</option>
+                  </select>
+                </div>
+                <div class="input-group flex-end">
+                  <button id="calculate-risk-btn" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-tree"></i> Evaluate Random Forest Model
+                  </button>
+                </div>
+              </div>
+
+              <div class="lab-output-card" id="risk-output-box">
+                <div class="output-row">
+                  <span class="output-label">Calculated Return Risk:</span>
+                  <span class="output-result badge-warning" id="risk-badge">Moderate Risk (48%)</span>
+                </div>
+                <div class="confidence-bar-wrap">
+                  <div class="confidence-bar-label">
+                    <span>Model Estimated Probability of Return:</span>
+                    <span id="risk-pct-text">48%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill warning-fill" id="risk-bar" style="width: 48%;"></div>
+                  </div>
+                </div>
+                <p class="model-insight" id="risk-insight">
+                  Insight: High discounts coupled with Cash on Delivery in the Apparel category elevate return probability. ResNet-18 image check flagged for package unboxing.
+                </p>
+              </div>
+            </div>
+
+            <!-- Subtab 2: Policy RAG Agent -->
+            <div class="subtab-content" id="subtab-policy-rag">
+              <p class="subtab-desc">
+                Ask a return or exchange query. The agent retrieves grounding policy chunks via <strong>FAISS vector similarity</strong> and responds with 0 hallucinations:
+              </p>
+              <div class="rag-chat-window" id="rag-chat-log">
+                <div class="chat-message bot">
+                  <div class="chat-avatar"><i class="fa-solid fa-robot"></i></div>
+                  <div class="chat-bubble">
+                    Hello! I am Flipkart's Policy-Grounded Support Agent. Ask me about return windows, electronic warranties, or apparel tags.
+                  </div>
+                </div>
+              </div>
+
+              <div class="rag-input-bar">
+                <input type="text" id="rag-query-input" class="lab-input" placeholder="e.g., Can I return shoes if I removed the tag?" />
+                <button id="rag-submit-btn" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Ask Agent</button>
+              </div>
+
+              <div class="preset-samples">
+                <span class="preset-title">Try Policies:</span>
+                <button class="rag-prompt-btn" data-query="What is the return window for smartphones?">Smartphone Return Policy</button>
+                <button class="rag-prompt-btn" data-query="Can I return an item without original packaging?">Packaging Requirements</button>
+                <button class="rag-prompt-btn" data-query="How does refund processing work for UPI orders?">Refund Processing</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Academic & Technical Foundation</span>
+          <h2 class="section-title">Education &amp; Certifications</h2>
+          <p class="section-subtitle">Rigorous academic grounding in computer applications, mathematics, and advanced AI</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1: IIT Patna -->
+          <div class="timeline-item">
+            <div class="timeline-badge-icon highlight-badge">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <div class="institution-meta">
+                  <span class="degree-title">Certification in Artificial Intelligence and Machine Learning</span>
+                  <h1 class="institution-name"><i class="fa-solid fa-building-columns"></i> IIT, Patna</h1>
+                </div>
+                <div class="timeline-date">
+                  <span class="date-chip"><i class="fa-regular fa-calendar-check"></i> 10/2025 – 10/2026</span>
+                  <div class="score-chip"></div>
+                  </div>
+                  <span class="score-chip"><i class="fa-solid fa-chart-line"></i> CGPA:- 8.14</span>
+              </div>
+              <p class="timeline-description">
+                Comprehensive specialized training in cutting-edge Machine Learning and Deep Learning architectures, Neural Network optimization, computer vision pipelines, and modern GenAI/RAG architectures.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-pill">Deep Learning</span>
+                <span class="tag-pill">IIT Patna</span>
+                <span class="tag-pill">RAG &amp; Vector Search</span>
+                <span class="tag-pill">PyTorch Workflows</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Ramdev P.G. College -->
+          <div class="timeline-item">
+            <div class="timeline-badge-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <div class="institution-meta">
+                  <span class="degree-title">Bachelor of Computer Applications (BCA)</span>
+                  <h1 class="institution-name"><i class="fa-solid fa-university"></i> Ramdev P.G. College, Dauriyahi, Uttar Pradesh</h1>
+                </div>
+                <div class="timeline-date">
+                  <span class="date-chip"><i class="fa-regular fa-calendar-check"></i> 06/2024 – Present</span>
+                   <div class="score-chip"></div>
+                   </div>
+                   <span class="score-chip"><i class="fa-solid fa-chart-line"></i> CGPA:- 0.0 </span>
+              </div>
+              <p class="timeline-description">
+                Core undergraduate computer science program covering Object-Oriented Programming, Data Structures &amp; Algorithms, Database Management Systems, Software Engineering, Discrete Mathematics, and Computer Networks.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-pill">BCA</span>
+                <span class="tag-pill">Data Structures</span>
+                <span class="tag-pill">Algorithms</span>
+                <span class="tag-pill">Database Systems</span>
+                <span class="tag-pill">C & C++</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Gulabdhar Mishra Intermediate College -->
+          <div class="timeline-item">
+            <div class="timeline-badge-icon">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <div class="institution-meta">
+                  <span class="degree-title">Higher Secondary School</span>
+                  <h1 class="institution-name"><i class="fa-solid fa-landmark"></i> Gulabdhar Mishra Intermediate College, Gopiganj, Uttar Pradesh</h1>
+                </div>
+                <div class="timeline-date">
+                  <span class="date-chip"><i class="fa-regular fa-calendar-check"></i> 04/2023 – 05/2024</span>
+                   <div class="score-chip"></div>
+                </div>
+                   <span class="score-chip"><i class="fa-solid fa-chart-line"></i> CGPA:- 6.1</span>
+                </div>
+              
+              <p class="timeline-description">
+                Intermediate graduation with intensive coursework in Physics, Chemistry, and Advanced Mathematics, establishing strong quantitative and logical problem-solving foundations.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-pill">Intermediate</span>
+                <span class="tag-pill">Science</span>
+                <span class="tag-pill">Quantitative Foundations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Get In Touch</span>
+          <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+          <p class="section-subtitle">Interested in collaborating on AI projects or discussing ML Engineer opportunities?</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Channels Info -->
+          <div class="contact-info-card glass-card">
+            <h3>Direct Contact Channels</h3>
+            <p>Feel free to reach out via phone, LinkedIn, or leave a message directly below.</p>
+
+            <div class="contact-methods-list">
+               <div class="availability-status-box">
+              <div class="avail-indicator"></div>
+              <div>
+                <strong>Current Status: Open to Opportunities</strong>
+                <p>ML Engineer / Applied AI Engineer / Data Science roles.</p>
+              </div>
+            </div>
+            
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="method-content">
+                  <span class="method-title">Location:</span>
+                  <span class="method-text">Gopiganj, Uttar Pradesh, India</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-brands fa-linkedin"></i></div>
+                <div class="method-content">
+                  <span class="method-title">LinkedIn:</span>
+                  <a href="https://www.linkedin.com/in/mohit-mishra-b31458379/" target="_blank" rel="noopener noreferrer" class="method-link">Mohit Mishra</a>
+                </div>
+              </div> 
+
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-brands fa-instagram"></i></div>
+                <div class="method-content">
+                  <span class="method-title">Instagram:</span>
+                  <a href="https://www.instagram.com/secrificer_mohit/" target="_blank" rel="noopener noreferrer" class="method-link">Mohit mishra</a>
+              </div>
+            </div>
+          
+            <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="method-content">
+                  <span class="method-title">Email:</span>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mohitmishra7962@gmail.com"" class="method-link">Mohit Mishra</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-card glass-card">
+            <h3>Send a Message</h3>
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g., Alex Johnson" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="e.g., alex@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Topic / Subject</label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="e.g., ML Engineering Role at [Company]" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-msg">Message</label>
+                <textarea id="contact-msg" class="form-control" rows="4" placeholder="Hi Mohit, I came across your portfolio and wanted to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-active">
+                <i class="fa-solid fa-paper-plane"></i> Send Message Directly
+              </button>
+            </form>
+            <div id="form-status" class="form-status-msg"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-logo">
+          <span class="brand-bracket">&lt;</span>
+          <span class="brand-name">Mohit Mishra</span>
+          <span class="brand-bracket">/&gt;</span>
+        </a>
+        <p>Machine Learning Engineer &bull; Applied AI &bull; PyTorch &bull; RAG</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#interactive-labs">Labs</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 Mohit Mishra. Built according to official resume specification.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ARCHITECTURE MODAL -->
+  <div id="arch-modal" class="modal-backdrop">
+    <div class="modal-box glass-card">
+      <div class="modal-header">
+        <h3 id="modal-title">System Architecture</h3>
+        <button id="modal-close" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
