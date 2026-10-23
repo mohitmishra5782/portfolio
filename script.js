@@ -600,17 +600,22 @@ window.handleContactSubmit = function(e) {
   const msg = document.getElementById("contact-msg").value;
   const statusBox = document.getElementById("form-status");
 
-  // Open default mail client pre-filled
-  const mailtoLink = `mailto:mohitmishra.ml@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + msg)}`;
-  window.open(mailtoLink, "_blank");
+  // 1. Build the mail client link
+  const mailtoLink = `mailto:mohitmishra7962@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + msg)}`;
+
+  // 2. Open the Thank You page in the new tab instead of a blank tab
+  window.open("thank_you_.html", "_blank");
+
+  // 3. Trigger the default mail client from the current page
+  window.location.href = mailtoLink;
 
   if (statusBox) {
-    statusBox.innerHTML = `<div style="color: #34d399; margin-top: 10px;"><i class="fa-solid fa-circle-check"></i> Thank you ${escapeHtml(name)}! Your email client has been opened to send this inquiry directly to Mohit Mishra.</div>`;
+    statusBox.innerHTML = `<div style="color: #34d399; margin-top: 10px;"><i class="fa-solid fa-circle-check"></i> Thank you ${escapeHtml(name)}! Your email client has been opened.</div>`;
   }
 };
 
 function escapeHtml(str) {
-  return str.replace(/[&<>'"]/g, 
+  return str.replace(/[&<>"']/g,
     tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
   );
 }
