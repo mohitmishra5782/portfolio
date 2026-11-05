@@ -591,26 +591,63 @@ function initResumePrint() {
   }
 }
 
-// Global Contact Form Handler
-window.handleContactSubmit = function(e) {
+// Global Contact Form Handler - EmailJS
+window.handleContactSubmit = async function(e) {
   e.preventDefault();
-  const name = document.getElementById("contact-name").value;
-  const email = document.getElementById("contact-email").value;
-  const subject = document.getElementById("contact-subject").value;
-  const msg = document.getElementById("contact-msg").value;
+
+  const form = document.getElementById("contact-form");
+  const name = document.getElementById("contact-name").value.trim();
+  const email = document.getElementById("contact-email").value.trim();
+  const subject = document.getElementById("contact-subject").value.trim();
+  const msg = document.getElementById("contact-msg").value.trim();
   const statusBox = document.getElementById("form-status");
+  const submitButton = form ? form.querySelector('button[type="submit"]') : null;
 
-  // 1. Build the mail client link
-  const mailtoLink = `mailto:mohitmishra7962@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + msg)}`;
+  if (!window.emailjs) {
+    if (statusBox) statusBox.textContent = "Email service is unavailable right now. Please try again later.";
+    return;
+  }
 
-  // 2. Open the Thank You page in the new tab instead of a blank tab
-  window.open("thank_you_.html", "_blank");
-
-  // 3. Trigger the default mail client from the current page
-  window.location.href = mailtoLink;
-
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.dataset.originalText = submitButton.textContent.trim();
+    submitButton.textContent = "Sending...";
+  }
   if (statusBox) {
-    statusBox.innerHTML = `<div style="color: #34d399; margin-top: 10px;"><i class="fa-solid fa-circle-check"></i> Thank you ${escapeHtml(name)}! Your email client has been opened.</div>`;
+    statusBox.textContent = "Sending your message...";
+    statusBox.style.color = "#fbbf24";
+  }
+
+  try {
+    await emailjs.send(
+      "service_ny6asoa",
+      "template_ayi9e23",
+      {
+        name: name,
+        email: email,
+        subject: subject,
+        message: msg,
+        reply_to: email
+      },
+      { publicKey: "XfVt2GBFsXdaPAcrxk75c" }
+    );
+
+    if (statusBox) {
+      statusBox.textContent = "Thank you " + name + "! Your message has been sent successfully.";
+      statusBox.style.color = "#34d399";
+    }
+    if (form) form.reset();
+  } catch (error) {
+    console.error("EmailJS contact form error:", error);
+    if (statusBox) {
+      statusBox.textContent = "Sorry, your message could not be sent. Please try again or email me directly.";
+      statusBox.style.color = "#f87171";
+    }
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = submitButton.dataset.originalText || "Send Message Directly";
+    }
   }
 };
 
