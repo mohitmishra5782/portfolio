@@ -595,7 +595,7 @@ function initResumePrint() {
 // The EmailJS SDK is loaded in index.html before this file.
 const EMAILJS_PUBLIC_KEY = "arB9Yf9kMe7-xQQIL";
 const EMAILJS_SERVICE_ID = "service_ny6asoa";
-const EMAILJS_TEMPLATE_ID = "template_ayi9e23";
+const EMAILJS_TEMPLATE_ID = "template_ka11nge";
 
 if (window.emailjs && typeof window.emailjs.init === "function") {
   window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
