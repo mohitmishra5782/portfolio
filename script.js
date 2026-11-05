@@ -591,26 +591,40 @@ function initResumePrint() {
   }
 }
 
-// Global Contact Form Handler - EmailJS
-window.handleContactSubmit = async function(e) {
+// EmailJS Contact Form
+// The EmailJS SDK is loaded in index.html before this file.
+const EMAILJS_PUBLIC_KEY = "arB9Yf9kMe7-xQQIL";
+const EMAILJS_SERVICE_ID = "service_ny6asoa";
+const EMAILJS_TEMPLATE_ID = "template_ayi9e23";
+
+if (window.emailjs && typeof window.emailjs.init === "function") {
+  window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+}
+
+window.handleContactSubmit = async function (e) {
   e.preventDefault();
 
   const form = document.getElementById("contact-form");
-  const name = document.getElementById("contact-name").value.trim();
-  const email = document.getElementById("contact-email").value.trim();
-  const subject = document.getElementById("contact-subject").value.trim();
-  const msg = document.getElementById("contact-msg").value.trim();
   const statusBox = document.getElementById("form-status");
-  const submitButton = form ? form.querySelector('button[type="submit"]') : null;
+  if (!form) return;
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const name = document.getElementById("contact-name")?.value.trim() || "";
+  const email = document.getElementById("contact-email")?.value.trim() || "";
+  const subject = document.getElementById("contact-subject")?.value.trim() || "";
+  const message = document.getElementById("contact-msg")?.value.trim() || "";
 
   if (!window.emailjs) {
-    if (statusBox) statusBox.textContent = "Email service is unavailable right now. Please try again later.";
+    if (statusBox) {
+      statusBox.textContent = "Email service could not load. Please refresh and try again.";
+      statusBox.style.color = "#f87171";
+    }
     return;
   }
 
   if (submitButton) {
     submitButton.disabled = true;
-    submitButton.dataset.originalText = submitButton.textContent.trim();
+    submitButton.dataset.originalText = submitButton.innerHTML;
     submitButton.textContent = "Sending...";
   }
   if (statusBox) {
@@ -619,36 +633,39 @@ window.handleContactSubmit = async function(e) {
   }
 
   try {
-    await emailjs.send(
-      "service_ny6asoa",
-      "template_ayi9e23",
-      {
-        name: name,
-        email: email,
-        subject: subject,
-        message: msg,
-        reply_to: email
-      },
-      { publicKey: "arB9Yf9kMe7-xQQIL" }
-    );
+    // Include common EmailJS template variable names so the template can use
+    // either the standard from_* names or the existing form field names.
+    await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      from_name: name,
+      from_email: email,
+      user_name: name,
+      user_email: email,
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+      reply_to: email
+    });
 
     if (statusBox) {
-      statusBox.textContent = "Thank you " + name + "! Your message has been sent successfully.";
+      statusBox.textContent = "Thank you, " + name + "! Your message has been sent successfully.";
       statusBox.style.color = "#34d399";
     }
-    if (form) form.reset();
+    form.reset();
   } catch (error) {
     console.error("EmailJS contact form error:", error);
+    const reason = error && (error.text || error.message)
+      ? (error.text || error.message)
+      : "Unknown EmailJS error";
+    const code = error && error.status ? " (Code: " + error.status + ")" : "";
     if (statusBox) {
-      const reason = error && (error.text || error.message) ? (error.text || error.message) : "Unknown EmailJS error";
-      const code = error && error.status ? " (Code: " + error.status + ")" : "";
       statusBox.textContent = "Message could not be sent: " + reason + code + ". Please try again or email me directly.";
       statusBox.style.color = "#f87171";
     }
   } finally {
     if (submitButton) {
       submitButton.disabled = false;
-      submitButton.textContent = submitButton.dataset.originalText || "Send Message Directly";
+      submitButton.innerHTML = submitButton.dataset.originalText || '<i class="fa-solid fa-paper-plane"></i> Send Message Directly';
     }
   }
 };
