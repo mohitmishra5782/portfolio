@@ -629,7 +629,7 @@ window.handleContactSubmit = async function(e) {
         message: msg,
         reply_to: email
       },
-      { publicKey: "TmoOKr0CyXSgBqNtC" }
+      { publicKey: "arB9Yf9kMe7-xQQIL" }
     );
 
     if (statusBox) {
