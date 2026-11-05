@@ -640,7 +640,9 @@ window.handleContactSubmit = async function(e) {
   } catch (error) {
     console.error("EmailJS contact form error:", error);
     if (statusBox) {
-      statusBox.textContent = "Sorry, your message could not be sent. Please try again or email me directly.";
+      const reason = error && (error.text || error.message) ? (error.text || error.message) : "Unknown EmailJS error";
+      const code = error && error.status ? " (Code: " + error.status + ")" : "";
+      statusBox.textContent = "Message could not be sent: " + reason + code + ". Please try again or email me directly.";
       statusBox.style.color = "#f87171";
     }
   } finally {
