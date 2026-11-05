@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Mohit Mishra - AI & ML Engineer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyberDark: '#070d14',
+            cyberCard: 'rgba(13, 22, 35, 0.78)',
+            neonCyan: '#00f2fe',
+            neonBlue: '#4facfe',
+            neonPurple: '#7928ca',
+            neonEmerald: '#10b981',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base Reset & Custom Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #070d14;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Ambient background grid */
+    .cyber-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 242, 254, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.035) 1px, transparent 1px);
+    }
+
+    /* Gradient texts */
+    .text-gradient-cyan {
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #9061f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-header {
+      background: linear-gradient(180deg, #ffffff 15%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Glassmorphism Card */
+    .glass-panel {
+      background: rgba(12, 20, 33, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 242, 254, 0.16);
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7),
+                  0 0 35px -5px rgba(0, 242, 254, 0.12);
+    }
+
+    /* Glow pulse effects */
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 242, 254, 0.4), inset 0 0 15px rgba(0, 242, 254, 0.2);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 35px rgba(0, 242, 254, 0.7), inset 0 0 25px rgba(0, 242, 254, 0.35);
+        transform: scale(1.02);
+      }
+    }
+
+    .pulse-avatar {
+      animation: pulseGlow 3.5s infinite ease-in-out;
+    }
+
+    /* Primary glowing button */
+    .btn-glow-primary {
+      background: linear-gradient(135deg, #00f2fe 0%, #3b82f6 50%, #6366f1 100%);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(0, 242, 254, 0.35);
+    }
+
+    .btn-glow-primary:hover {
+      box-shadow: 0 6px 28px rgba(0, 242, 254, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* Secondary Glass Button */
+    .btn-glass {
+      background: rgba(18, 30, 49, 0.65);
+      border: 1px solid rgba(0, 242, 254, 0.22);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      
+    }
+
+    .btn-glass:hover {
+      background: rgba(0, 242, 254, 0.12);
+      border-color: rgba(0, 242, 254, 0.55);
+      color: #00f2fe;
+      transform: translateY(-2px);
+    }
+
+    /* Radial glow backdrop */
+    .hero-glow-sphere {
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(0, 242, 254, 0.14) 0%, rgba(79, 172, 254, 0.08) 35%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Terminal blinking cursor */
+    .cursor-blink {
+      display: inline-block;
+      width: 7px;
+      height: 15px;
+      background: #00f2fe;
+      margin-left: 4px;
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen relative selection:bg-cyan-500 selection:text-black">
+
+  <!-- Interactive Neural Particles Canvas -->
+  <canvas id="neuralCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+  <div class="fixed inset-0 cyber-grid pointer-events-none z-0 opacity-80"></div>
+  
+  <!-- Ambient Center Glow -->
+  <div class="hero-glow-sphere top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+  <!-- Navigation Header matching portfolio -->
+  <header class="relative z-20 w-full border-b border-cyan-950/40 bg-[#070d14]/70 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="potfillio.html" class="group flex items-center gap-1 font-mono text-xl sm:text-2xl font-bold tracking-tight">
+        <span class="text-cyan-400 group-hover:drop-shadow-[0_0_8px_rgba(0,242,254,0.8)] transition">&lt;</span>
+        <span class="text-white group-hover:text-cyan-200 transition">Mohit Mishra</span>
+        <span class="text-cyan-400 group-hover:drop-shadow-[0_0_8px_rgba(0,242,254,0.8)] transition">/&gt;</span>
+      </a>
+
+      <!-- Navigation links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-regular fa-user text-xs text-cyan-400"></i> About</a>
+        <a href="#skills" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-solid fa-microchip text-xs text-cyan-400"></i> Skills</a>
+        <a href="#projects" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-solid fa-code-fork text-xs text-cyan-400"></i> Projects</a>
+        <a href="#labs" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-solid fa-flask text-xs text-cyan-400"></i> Live Labs</a>
+        <a href="#education" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap text-xs text-cyan-400"></i> Education</a>
+        <a href="#contact" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-solid fa-paper-plane text-xs text-cyan-400"></i> Contact</a>
+      </nav>
+
+      <!-- Action Button & Dark Mode Toggle Icon -->
+      <div class="flex items-center gap-4">
+        <div class="nav-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <div/>
+          <i class="fa-solid fa-moon theme-icon"></i>
+        </button>
+        <a href="#contact" class="btn-glow-primary text-black font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg flex items-center gap-2">
+          <span>Hire Me</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="relative z-10 flex-grow flex items-center justify-center px-4 py-12 sm:py-16">
+    <div class="w-full max-w-3xl">
+      
+      <!-- Hero Glass Card -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-10 text-center relative overflow-hidden">
+        
+        <!-- Top accent neon gradient line -->
+        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+
+        <!-- Status Tag -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium tracking-wide mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 -ml-4"></span>
+          <span>Transmission Received & Verified</span>
+        </div>
+
+        <!-- Animated Neural Success Icon -->
+        <div class="mx-auto mb-6 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-cyan-950/80 to-slate-900/90 border border-cyan-400/40 flex items-center justify-center pulse-avatar relative">
+          <i class="fa-solid fa-check text-cyan-400 text-3xl sm:text-4xl drop-shadow-[0_0_12px_rgba(0,242,254,0.9)]"></i>
+          <!-- Small circuit node accent dots -->
+          <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f2fe]"></span>
+          <span class="absolute -bottom-1 -left-1 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_6px_#3b82f6]"></span>
+        </div>
+
+        <!-- Stylized Thank You Heading -->
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight font-heading mb-4">
+          <span class="text-white">THANK </span><span class="text-gradient-cyan">YOU!</span>
+        </h1>
+
+        <!-- Engaging Subtext -->
+        <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-8">
+          Thanks for reaching out! Your message just landed in my inbox. I’m currently reviewing incoming queries and will get back to you shortly.
+        </p>
+
+        <!-- Cyber Terminal Confirmation Output Box -->
+        <div class="max-w-xl mx-auto mb-8 text-left rounded-xl bg-[#090f19] border border-cyan-500/20 overflow-hidden shadow-2xl font-mono text-xs sm:text-sm">
+          <!-- Terminal Header -->
+          <div class="bg-[#0e1726] px-4 py-2.5 border-b border-slate-800/80 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              <span class="text-slate-400 text-xs ml-2">mohit_contact_daemon.log</span>
+            </div>
+            <span class="text-[11px] text-cyan-400/80 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-500/30">
+              HTTP 200 OK
+            </span>
+          </div>
+          
+          <!-- Terminal Body Lines -->
+          <div class="p-4 space-y-2 text-slate-300">
+            <p class="flex items-start">
+              <span class="text-emerald-400 mr-2">[SUCCESS]</span>
+              <span>Payload authenticated & encrypted via TLS 1.3</span>
+            </p>
+            <p class="flex items-start">
+              <span class="text-cyan-400 mr-2">[DISPATCH]</span>
+              <span>Forwarded to: <span class="text-slate-100 font-semibold">Mohit Mishra's Direct Inbox</span></span>
+            </p>
+            <p class="flex items-start">
+              <span class="text-purple-400 mr-2">[ESTIMATED SLA]</span>
+              <span>Response Window: <span class="text-amber-300">&lt; 24 Hours</span></span>
+            </p>
+            <p class="text-slate-500 pt-1">
+              <span>Ready for next job dispatch...</span><span class="cursor-blink"></span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="potfillio.html" class="btn-glow-primary w-full sm:w-auto px-7 py-3 rounded-xl font-semibold text-slate-950 flex items-center justify-center gap-2 text-sm sm:text-base">
+            <i class="fa-solid fa-house text-sm"></i>
+            <span>Back to Home</span>
+          </a>
+          
+          <a href="/#projects" class="btn-glass w-full sm:w-auto px-7 py-3 rounded-xl font-medium text-slate-200 flex items-center justify-center gap-2 text-sm sm:text-base">
+            <i class="fa-solid fa-diagram-project text-cyan-400 text-sm"></i>
+            <span>Explore AI Projects</span>
+          </a>
+        </div>
+
+        <!-- Social Proof Chips -->
+        <div class="mt-8 pt-6 border-t border-slate-800/60 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400 font-mono">
+          <div class="px-3 py-1.5 rounded-lg bg-slate-900/70 border border-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-cyan-400"></i>
+            <span>Gopiganj, Uttar Pradesh, India</span>
+          </div>
+
+          <a href="https://www.linkedin.com/in/mohit-mishra-b31458379/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900/70 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition flex items-center gap-2">
+            <i class="fa-brands fa-linkedin text-blue-400"></i>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="https://www.instagram.com/secrificer_mohit/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900/70 border border-slate-800 hover:border-pink-500/50 hover:text-pink-300 transition flex items-center gap-2">
+            <i class="fa-brands fa-instagram text-pink-400"></i>
+            <span>Instagram</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Clean Minimal Footer -->
+  <footer class="relative z-10 py-6 text-center text-xs text-slate-500 border-t border-cyan-950/30">
+    <p>&copy; 2026 Mohit Mishra. Built for High-Performance Machine Learning & Applied AI Systems.</p>
+  </footer>
+
+  <!-- Interactive Neural Mesh Background Simulation -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('neuralCanvas');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      const particleCount = 45;
+      const maxDistance = 140;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.55;
+          this.vy = (Math.random() - 0.5) * 0.55;
+          this.radius = Math.random() * 1.8 + 0.8;
+          this.alpha = Math.random() * 0.5 + 0.2;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0) this.x = width;
+          if (this.x > width) this.x = 0;
+          if (this.y < 0) this.y = height;
+          if (this.y > height) this.y = 0;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(0, 242, 254, ${this.alpha})`;
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = '#00f2fe';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      function init() {
+        resize();
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function drawLines() {
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < maxDistance) {
+              const opacity = (1 - dist / maxDistance) * 0.16;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(0, 242, 254, ${opacity})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+        }
+
+        drawLines();
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        resize();
+      });
+
+      window.onload = function () {
+        init();
+        animate();
+      };
+    })();
+  </script>
+</body>
+</html>
