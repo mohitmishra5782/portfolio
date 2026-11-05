@@ -611,7 +611,7 @@ window.handleContactSubmit = async function (e) {
   const submitButton = form.querySelector('button[type="submit"]');
   const name = document.getElementById("contact-name")?.value.trim() || "";
   const email = document.getElementById("contact-email")?.value.trim() || "";
-  const subject = document.getElementById("contact-subject")?.value.trim() || "";
+  const title = document.getElementById("contact-subject")?.value.trim() || "";
   const message = document.getElementById("contact-msg")?.value.trim() || "";
 
   if (!window.emailjs) {
