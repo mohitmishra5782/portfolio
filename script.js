@@ -647,9 +647,11 @@ window.handleContactSubmit = async function (e) {
       reply_to: email
     });
 
-    if 
-      .open("thank_you_.html", "_self");
-
+    if (statusBox) {
+    statusBox.textContent = 'THANK YOU'+'Your Name ' + "Sending your message...";
+    statusBox.style.color = "#fbbf24";
+  }
+     
   } finally {
     if (submitButton) {
       submitButton.disabled = false;
