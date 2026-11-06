@@ -647,10 +647,8 @@ window.handleContactSubmit = async function (e) {
       reply_to: email
     });
 
-    if (statusBox) {
-      statusBox.textContent = "Thank you, " + name + "! Your message has been sent successfully.";
-      statusBox.style.color = "#34d399";
-    }
+    if 
+      .open("thank_you_.html", "_self");
 
   } finally {
     if (submitButton) {
